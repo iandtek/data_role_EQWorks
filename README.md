@@ -11,8 +11,13 @@ This script is designed to run with Python 3, please make sure that you have the
 - scipy
 - folium
 - webbrowser
-  
-To run the script simply run `python solution.py` or `python3 solution.py` if your default version of python is not python 3.
+- matplotlib
+- networkx
+- pprint
+
+To run the solution script simply run `python solution.py` or `python3 solution.py` if your default version of python is not python 3.
+
+To run the pipeline_dependency script simply run `python pipeline_dependency.py` or `python3 pipeline_dependency.py` if your default version of python is not python 3.
 
 After running the script 3 files will be created in the output folder:
 
