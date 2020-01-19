@@ -18,4 +18,4 @@ After running the script 3 files will be created in the output folder:
 
 - basemap.html (It is a HTML map with all the data)
 - DataSample.csv (It is a CSV with all the new columns added POI and Distance)
-- POIList.csv (It is a CSV of the Points of Interest with all the data added )Average, MaximumDistance, StandardDeviation, Density, Count and Popularity) 
+- POIList.csv (It is a CSV of the Points of Interest with all the data added: Average, MaximumDistance, StandardDeviation, Density, Count and Popularity) 
