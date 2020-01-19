@@ -1,0 +1,27 @@
+Bonus: Try to come up with some reasonable hypotheses regarding POIs, state all assumptions, testing steps and conclusions. 
+
+Hypotheses regardin Points of Interest:
+
+ - The points of interest are created when there are many transacctions surrounding that specific point.
+ - The points of interest in this case are all located in Canada.
+ - The points of interest are located in large cities, never in the sea.
+ - Some of the requests create an spiral in the map, maybe because they are just sample data.
+ - POI1 and POI2 have the same latitude and longitude, causing POI2 to have 0 requests assigned because the algoritm looks for the first match,
+   this shouldn't happen in the real dataset.
+
+
+Testing steps:
+
+ - Based on the map plotted by solution.py, you can locate the POIs in the map and realize that they are located all in Canada,
+ but some of the requests are located outside Canada (Some of them in Deutschland and Philippines)
+ - After executing the script, you can see that the maximum distance of each POI is
+    - POI1 = 1,684,757.58 meters
+    - POI2 = 0.0 meters (Because it's duplicated from POI1, exact coordinates)
+    - POI3 = 1,547,936.44 meters 
+    - POI4 = 14,192,312.71 meters (because the longest distance is with the request in Phillipines)
+
+The formula that I used to calculate the popularity of each POI is ((poi_count/((total_count+1)-poi_count)) * 20) - 10
+Where poi_count is the number of all the requests that are near to the POI and total_count is the total number of requests available in the dataset
+the denominator of the formula is ((total_count+1)-poi_count)), I add 1 to the total_count to avoid division by zero in the case of poi_count equal to
+total_count (this can be true when all the requests are close to the same POI), I multiply by 20 because I need the ratio of the previous fraction
+to be expressed in terms of 20 steps and then I subtract 10 because I need the result to be expressed from -10 to 10.
